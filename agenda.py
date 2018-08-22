@@ -1,19 +1,25 @@
 #Agenda Telefonica
 import funcoes
 
-funcoes.bemvindo()
+menu = ""
+menu = funcoes.bemvindo(menu)
 
-#Opcoes do Usuario
-opcao = int(raw_input())
-print("Seleccionaste", opcao)
-
-
-#Estrutura de controle
-if opcao == 1:
-	funcoes.adicionar()
-elif opcao == 2:
-	funcoes.listar()
-else:
-	funcoes.falha()
-
-
+while(menu != "0"):
+    if menu == "1":
+        funcoes.adicionar()
+        menu = funcoes.bemvindo(menu)
+    elif menu == "2":
+        funcoes.remover()
+        menu = funcoes.bemvindo(menu)
+    elif menu == "3":
+        funcoes.buscar()
+        menu = funcoes.bemvindo(menu)
+    elif menu == "4":
+        funcoes.listar()
+        menu = funcoes.bemvindo(menu)
+    else:
+        funcoes.falha()
+        input("Pressione Enter para continuar...")
+        menu = funcoes.bemvindo(menu)
+print("Obrigado por utilizar nosso sistema!")
+exit()
