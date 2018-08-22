@@ -5,20 +5,6 @@ def bemvindo():
 	print("1  Adicionar um novo contato")
 	print("2  Listar os contatos da agenda")
 
-#Funcoes do processo
-def adicionar():
-	print("Adicionar um registro")
-	agenda = open("agendatelefonica.csv",'a')
-	nome = raw_input("Nome do Contato:")
-	telefone = raw_input("Digite o telefone:")
-	print("Contato salvo com nome:",nome," e numero",telefone)
-	agenda.write(nome)
-	agenda.write(",")
-	agenda.write(telefone)
-	agenda.write(",")
-	agenda.write("\n")
-	agenda.close()
-	
 def buscar():
 	os.system('cls')
 	print("Busca um contato")
@@ -34,6 +20,22 @@ def buscar():
 	agenda.close()
 	voltar()
 	
+	
+#Função pra adicionar novos contatos na agenda
+def adicionar():
+	os.system('cls')
+	print("Adicionar um registro")
+	agenda = open("agendatelefonica.csv",'a')
+	nome = input("Nome do Contato:")
+	telefone = input("Digite o telefone:")
+	print("Contato salvo com nome:",nome,"e numero",telefone)
+	agenda.write(nome)
+	agenda.write(" - ")
+	agenda.write(telefone)
+	agenda.write(",")
+	agenda.write("\n")
+	agenda.close()
+	voltar()	
 	
 def listar():
 	print("Lista de Contatos")
