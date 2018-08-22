@@ -13,6 +13,42 @@ def bemvindo(menu):
 	menu = input("Opção: ")
 	return menu
 
+def remover():
+	os.system('cls')
+	count = 0
+	print("Remove um contato")
+	nome = input("Digite o nome do contato que deseja remover: ")
+	agenda = open("agendatelefonica.csv", 'r+')
+	texto = agenda.read().splitlines()
+	
+	for i in texto:
+		if(nome in i):
+			print("Deseja remover o contato:",i,"? s/n:", end=" ")
+			opcao = input()
+			while(opcao != "s" and opcao != "n"):
+				falha()
+				print("Deseja remover o contato:",i,"? s/n:", end=" ")
+				opcao = input()
+			if(opcao == "s"):
+				texto.remove(i)
+				agenda.close()
+				agenda = open("agendatelefonica.csv", 'w+')
+				for j in texto:
+					agenda.write(j)
+					agenda.write("\n")
+				print("Contato apagado com sucesso!")
+				agenda.close()
+				count += 1
+				opcao = "a"
+			elif(opcao == "n"):
+				print("Procurando próximo contato...")
+				opcao = "a"
+	if(count == 0):
+		print("Contato não encontrado!")
+	agenda.close()
+	voltar()
+
+
 def buscar():
 	os.system('cls')
 	print("Busca um contato")
