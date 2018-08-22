@@ -38,14 +38,17 @@ def adicionar():
 	voltar()	
 	
 def listar():
-	print("Lista de Contatos")
-	agenda = open("agendatelefonica.csv")
-	numero = 0
-	while numero < 25:
-		print (agenda.readline())
-		numero = numero + 1
-	print("Listado correctamente")	
+	count = 0
+	os.system('cls')
+	print("Lista de Contatos:")
+	agenda = open("agendatelefonica.csv", "r")
+	for i, linha in enumerate(agenda):
+		linha = linha.rstrip()
+		print (str(i)+".",linha)
+		count += 1
 	agenda.close()
+	print("\n"+str(count)+" contatos encontrados.")	
+	voltar()
 
 def falha():
 	print("Opcao Incorreta")
