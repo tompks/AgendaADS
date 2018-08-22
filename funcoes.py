@@ -51,4 +51,17 @@ def listar():
 	voltar()
 
 def falha():
-	print("Opcao Incorreta")
+	print("Opcao Inválida!")
+
+def voltar():
+	print("\n")
+	opcao = input("Deseja voltar ao menu? s/n : ")
+	if(opcao == "s"):
+		os.system('cls')
+		return 0
+	elif(opcao == "n"):
+		print("Obrigado por utilizar nosso sistema!")
+		exit()
+	else:
+		falha()
+		voltar()
