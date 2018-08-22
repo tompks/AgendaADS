@@ -19,6 +19,22 @@ def adicionar():
 	agenda.write("\n")
 	agenda.close()
 	
+def buscar():
+	os.system('cls')
+	print("Busca um contato")
+	nome = input("Digite o nome ou telefone do contato que deseja visualizar: ")
+	agenda = open("agendatelefonica.csv", 'r')
+	count = 0
+	for linha in agenda:
+		linha.rstrip()
+		if nome in linha:
+			print(linha)
+			count += 1
+	print("Foram encontrados",count,"contatos.")
+	agenda.close()
+	voltar()
+	
+	
 def listar():
 	print("Lista de Contatos")
 	agenda = open("agendatelefonica.csv")
