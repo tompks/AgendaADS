@@ -1,9 +1,17 @@
-#Mensagem de Bem Vindo e Opcoes ao Usuario
-def bemvindo():
+import os
+menu = ""
+
+def bemvindo(menu):
+	os.system('cls')
 	print("Bem Vindo a Agenda")
-	print("Selecione uma Opcao")
-	print("1  Adicionar um novo contato")
-	print("2  Listar os contatos da agenda")
+	print("Selecione uma Opcao:")
+	print("1 - Adicionar um novo contato")
+	print("2 - Remover um contato")
+	print("3 - Buscar por um contato")
+	print("4 - Listar todos os contatos")
+	print("0 - Para sair")
+	menu = input("Opção: ")
+	return menu
 
 def buscar():
 	os.system('cls')
