@@ -1,25 +1,25 @@
 #Agenda Telefonica
 import funcoes
 
-menu = ""
-menu = funcoes.bemvindo(menu)
+menu = funcoes.bemvindo()
 
 while(menu != "0"):
     if menu == "1":
-        funcoes.adicionar()
-        menu = funcoes.bemvindo(menu)
+        funcoes.novocontato()
+        menu = funcoes.bemvindo()
     elif menu == "2":
         funcoes.remover()
-        menu = funcoes.bemvindo(menu)
+        menu = funcoes.bemvindo()
     elif menu == "3":
         funcoes.buscar()
-        menu = funcoes.bemvindo(menu)
+        menu = funcoes.bemvindo()
     elif menu == "4":
         funcoes.listar()
-        menu = funcoes.bemvindo(menu)
+        menu = funcoes.bemvindo()
     else:
         funcoes.falha()
-        input("Pressione Enter para continuar...")
-        menu = funcoes.bemvindo(menu)
+        menu = funcoes.bemvindo()
+        
 print("Obrigado por utilizar nosso sistema!")
+
 exit()

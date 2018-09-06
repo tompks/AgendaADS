@@ -1,7 +1,8 @@
 import os
-menu = ""
+#menu = ""
 
-def bemvindo(menu):
+#def bemvindo(menu):
+def bemvindo():
 	os.system('cls')
 	print("Bem Vindo a Agenda")
 	print("Selecione uma Opcao:")
@@ -63,16 +64,19 @@ def buscar():
 	print("Foram encontrados",count,"contatos.")
 	agenda.close()
 	voltar()
-	
+
+#REFATORADO
+def novocontato():
+        os.system('cls')
+        print("Adicionar um registro")
+        agenda = open("agendatelefonica.csv",'a')
+	nome = raw_input("Nome do Contato:")
+	telefone = raw_input("Digite o telefone:")
+	print("Contato salvo com nome:",nome," e numero",telefone)
+	adicionar(agenda,nome,telefone)	
 	
 #Função pra adicionar novos contatos na agenda
-def adicionar():
-	os.system('cls')
-	print("Adicionar um registro")
-	agenda = open("agendatelefonica.csv",'a')
-	nome = input("Nome do Contato:")
-	telefone = input("Digite o telefone:")
-	print("Contato salvo com nome:",nome,"e numero",telefone)
+def adicionar(agenda,nome,telefone):	
 	agenda.write(nome)
 	agenda.write(" - ")
 	agenda.write(telefone)
@@ -96,6 +100,7 @@ def listar():
 
 def falha():
 	print("Opcao Inválida!")
+	voltar()
 
 def voltar():
 	print("\n")
@@ -108,4 +113,3 @@ def voltar():
 		exit()
 	else:
 		falha()
-		voltar()
