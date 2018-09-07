@@ -70,21 +70,23 @@ def novocontato():
         os.system('cls')
         print("Adicionar um registro")
         agenda = open("agendatelefonica.csv",'a')
-	nome = raw_input("Nome do Contato:")
-	telefone = raw_input("Digite o telefone:")
-	print("Contato salvo com nome:",nome," e numero",telefone)
-	adicionar(agenda,nome,telefone)	
+        nome = input("Nome do Contato:")
+        telefone = input("Digite o telefone:")
+        print("Contato salvo com nome:",nome," e numero",telefone)
+        adicionar(agenda,nome,telefone)	
 	
 #Função pra adicionar novos contatos na agenda
 def adicionar(agenda,nome,telefone):	
-	agenda.write(nome)
-	agenda.write(" - ")
-	agenda.write(telefone)
-	agenda.write(",")
-	agenda.write("\n")
-	agenda.close()
-	voltar()	
+        agenda.write(nome)
+        agenda.write(" - ")
+        agenda.write(telefone)
+        agenda.write(",")
+        agenda.write("\n")
+        agenda.close()
+        voltar()
 	
+
+#Lista todos os contatos	
 def listar():
 	count = 0
 	os.system('cls')
@@ -97,6 +99,7 @@ def listar():
 	agenda.close()
 	print("\n"+str(count)+" contatos encontrados.")	
 	voltar()
+
 
 def falha():
 	print("Opcao Inválida!")

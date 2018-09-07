@@ -1,9 +1,9 @@
 import funcoes
 import sys
 
-erroadicionar = false
+erroadicionar = False
 
-agenda = open("telefonica.csv",'a')
+agenda = open("telefonica.csv")
 nome = 'Diogo'
 telefone = '11987654321'
 
